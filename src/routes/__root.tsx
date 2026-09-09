@@ -12,6 +12,12 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
+const SITE_URL = "https://tanstack-start-ts-desktop-gauri-portfolio-final.gaurisharma.workers.dev/";
+const SITE_TITLE = "Gauri Sharma | Electrical Engineering & Computer Science Portfolio";
+const SITE_DESCRIPTION =
+  "Explore Gauri Sharma's work across electrical engineering, computer science, artificial intelligence, medical imaging, integrated systems, hardware testing and quantum-system simulation.";
+const SOCIAL_IMAGE_URL = `${SITE_URL}portfolio-social-preview.jpg`;
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -77,22 +83,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Gauri | Building intelligent systems" },
-      {
-        name: "description",
-        content:
-          "Personal portfolio of Gauri: AI, machine learning, engineering case studies, research, and selected projects.",
-      },
-      { name: "author", content: "Gauri" },
-      { property: "og:title", content: "Gauri | Building intelligent systems" },
-      {
-        property: "og:description",
-        content: "Personal portfolio of Gauri: AI, machine learning, and engineering work.",
-      },
+      { title: SITE_TITLE },
+      { name: "description", content: SITE_DESCRIPTION },
+      { name: "author", content: "Gauri Sharma" },
       { property: "og:type", content: "website" },
+      { property: "og:title", content: SITE_TITLE },
+      { property: "og:description", content: SITE_DESCRIPTION },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:image", content: SOCIAL_IMAGE_URL },
+      { property: "og:image:secure_url", content: SOCIAL_IMAGE_URL },
+      { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: SITE_TITLE },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: SITE_TITLE },
+      { name: "twitter:description", content: SITE_DESCRIPTION },
+      { name: "twitter:image", content: SOCIAL_IMAGE_URL },
     ],
     links: [
+      { rel: "canonical", href: SITE_URL },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },

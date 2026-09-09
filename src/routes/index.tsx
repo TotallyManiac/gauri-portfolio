@@ -24,16 +24,6 @@ import projectDiabetes from "@/assets/case-diabetes-validation-v2.jpg";
 import projectNanosonics from "@/assets/case-nanosonics-collage-v2.jpg";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Gauri Sharma | Electrical Engineering & Computer Science" },
-      {
-        name: "description",
-        content:
-          "Gauri Sharma's portfolio across electrical engineering, computer science, AI, integrated systems and signal processing.",
-      },
-    ],
-  }),
   component: Portfolio,
 });
 
