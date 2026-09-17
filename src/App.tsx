@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowUpRight,
   BookOpen,
@@ -22,10 +21,6 @@ import coverArt from "@/assets/grimoire-cover.webp";
 import projectAlzheimers from "@/assets/case-mri-segmentation-v2.png";
 import projectDiabetes from "@/assets/case-diabetes-validation-v2.jpg";
 import projectNanosonics from "@/assets/case-nanosonics-collage-v2.jpg";
-
-export const Route = createFileRoute("/")({
-  component: Portfolio,
-});
 
 const pageNames = [
   "Cover",
@@ -105,7 +100,7 @@ const projects = [
   },
 ];
 
-function Portfolio() {
+export default function App() {
   const [active, setActive] = useState(0);
   const [outgoing, setOutgoing] = useState<number | null>(null);
   const [direction, setDirection] = useState<1 | -1>(1);
@@ -245,7 +240,7 @@ function Portfolio() {
           <b>Gauri Sharma</b>
         </button>
         <div className="deck-actions">
-          <a href="/Gauri-Sharma-Resume.pdf" download>
+          <a href={`${import.meta.env.BASE_URL}Gauri-Sharma-Resume.pdf`} download>
             <Download /> <span>Résumé</span>
           </a>
         </div>
@@ -1004,7 +999,7 @@ function ContactPage() {
           <a href="mailto:gstechland100@gmail.com">
             <Mail /> Send a message
           </a>
-          <a href="/Gauri-Sharma-Resume.pdf" download>
+          <a href={`${import.meta.env.BASE_URL}Gauri-Sharma-Resume.pdf`} download>
             <Download /> Download résumé
           </a>
           <a href="https://github.com/TotallyManiac" target="_blank" rel="noreferrer">
