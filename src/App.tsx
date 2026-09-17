@@ -492,7 +492,7 @@ function EducationPage() {
     >
       <div className="education-path">
         <article>
-          <div className="education-year">2022 to 2026</div>
+          <div className="education-year">2022 to Mid 2027</div>
           <span className="education-seal">
             <GraduationCap />
           </span>
